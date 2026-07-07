@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/e-learning
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/elearning_a01_m1
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: kea1213
+
+  application:
+    name: elearning-a01-m1
+server:
+  port: 9090
+
+
+keycloak:
+  server-url: http://localhost:8080
+  client-id: spring-boot-auth
+  client-secrete: F2zP31AFVPydLZoJAiR184r8uuDPSWMf
+  realm: master
+  target-realm: e-learning
