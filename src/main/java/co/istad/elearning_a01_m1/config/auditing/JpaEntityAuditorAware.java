@@ -1,6 +1,7 @@
 package co.istad.elearning_a01_m1.config.auditing;
 
 
+import co.istad.elearning_a01_m1.security.AuthUtils;
 import jakarta.annotation.Nullable;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.core.Authentication;
@@ -20,19 +21,24 @@ public class JpaEntityAuditorAware implements AuditorAware<String> {
 
         //Get Authentication object
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        return Optional.ofNullable(AuthUtils.extractUserId());
 
 
-        if(auth != null){
-            Jwt jwt = (Jwt) auth.getPrincipal();
 
-            if(jwt != null){
-                return Optional.of(jwt.getSubject());
-            }
-
-        }
-
-        return Optional.of("SYSTEM");
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//
+//
+//        if(auth != null){
+//            Jwt jwt = (Jwt) auth.getPrincipal();
+//
+//            if(jwt != null){
+//                return Optional.of(jwt.getSubject());
+//            }
+//
+//        }
+//
+//        return Optional.of("SYSTEM");
     }
 }
 

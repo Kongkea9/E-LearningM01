@@ -8,8 +8,10 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
+#    url: jdbc:postgresql://localhost:9998/elearning_db
     url: jdbc:postgresql://localhost:5432/elearning_a01_m1
     driver-class-name: org.postgresql.Driver
+#    username: m1usr
     username: postgres
     password: kea1213
 

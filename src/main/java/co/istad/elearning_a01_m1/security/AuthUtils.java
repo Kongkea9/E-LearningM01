@@ -19,7 +19,7 @@ public final class AuthUtils {
         Authentication auth = getAuth();
 
         if (auth instanceof AnonymousAuthenticationToken) {
-            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "You have been forbidden");
+            return null;
         }
 
         JwtAuthenticationToken jwtAuthenticationToken = (JwtAuthenticationToken) auth;

@@ -22,9 +22,9 @@ public class StudentProfile extends BasedEntity {
     @Id
     private String userId;
 
+    private String profilePicture;
     private String university;
     private String major;
-    private String biography;
     private String jobTitle;
     private String phoneNumber;
     private String githubLink;
